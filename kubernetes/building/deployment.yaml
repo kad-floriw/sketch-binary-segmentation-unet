@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: building
+  name: building
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: building
+  template:
+    metadata:
+      labels:
+        app: building
+    spec:
+      containers:
+      - name: building
+        image: bsegmentation:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+          - mountPath: /app/weights
+            name: weights-volume
+      volumes:
+        - name: weights-volume
+          hostPath:
+            path: /C/Users/FlorijnWim/PycharmProjects/image-segmentation-unet/weights/building
+            type: Directory

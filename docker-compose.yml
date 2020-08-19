@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  building-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5001
+    environment:
+      - WORKERS=1
+      - PORT=5001
+      - TIMEOUT=60
+      - MAX_REQUESTS=500
+      - WEIGHTS=/app/weights/weights.h5
+    volumes:
+      - ./weights/building:/app/weights
+
+  line-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5002:5002
+    environment:
+      - WORKERS=1
+      - PORT=5002
+      - TIMEOUT=60
+      - MAX_REQUESTS=500
+      - WEIGHTS=/app/weights/weights.h5
+    volumes:
+      - ./weights/line:/app/weights

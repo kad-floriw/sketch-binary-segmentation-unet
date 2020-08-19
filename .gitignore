@@ -1,0 +1,8 @@
+.idea
+
+/src/__pycache__
+
+/venv
+/train_data
+/weights/line/
+/weights/building/
