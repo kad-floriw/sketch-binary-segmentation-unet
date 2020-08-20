@@ -21,7 +21,7 @@ def get_image_mask(img, url):
 
     result = json.loads(response.text)
     mask = np.asarray(result['result'][0]).astype(np.uint8)
-    mask_indices = np.where(mask > 100)
+    mask_indices = np.where(mask > 127)
 
     return mask_indices
 
