@@ -2,3 +2,5 @@ Flask==1.1.2
 numpy==1.19.0
 opencv-python==4.2.0.34
 gunicorn[gevent]==20.0.4
+azure-storage-blob==12.0.0
+azure-datalake-store==0.0.49

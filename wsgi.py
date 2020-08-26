@@ -52,7 +52,7 @@ def recognize():
 def before_first_request():
     global model
 
-    weight_location = os.environ.get('WEIGHTS', os.path.join('weights', 'line', 'line_weights.h5'))
+    weight_location = os.path.join('weights', 'weights.h5')
     model = UNETModel(model_shape, weights=weight_location)
 
 

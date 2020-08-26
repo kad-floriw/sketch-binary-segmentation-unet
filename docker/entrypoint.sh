@@ -7,6 +7,8 @@ if [ "$1" = "run" ]; then
   WORKER_CONNECTIONS=10
   MAX_REQUESTS_JITTER=10
 
+  python get_weights.py
+
   exec gunicorn ${WSGI_MODULE}:app \
     --workers "$WORKERS" \
     --timeout "$TIMEOUT" \
