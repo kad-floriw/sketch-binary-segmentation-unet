@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: building-conf
+data:
+  BACKEND_TYPE: DATALAKE
+  WEIGHTS_LOCATION: cooked/vectorisation/model_weights/building.h5

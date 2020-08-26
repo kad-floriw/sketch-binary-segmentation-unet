@@ -20,11 +20,8 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
-        volumeMounts:
-          - mountPath: /app/weights
-            name: weights-volume
-      volumes:
-        - name: weights-volume
-          hostPath:
-            path: /C/Users/FlorijnWim/PycharmProjects/image-segmentation-unet/weights/line
-            type: Directory
+        envFrom:
+          - configMapRef:
+              name: line-conf
+          - secretRef:
+              name: azure-storage

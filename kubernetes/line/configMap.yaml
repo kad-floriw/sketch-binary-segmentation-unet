@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: line-conf
+data:
+  BACKEND_TYPE: DATALAKE
+  WEIGHTS_LOCATION: cooked/vectorisation/model_weights/line.h5
